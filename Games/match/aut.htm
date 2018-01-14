@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<div style="float:left">
+	<a href="http://localhost/autism/home.html" style="text-decoration: none; padding-right: 10px; padding-left: 30px; font-size: 25px; color: #640C84;">হোম  </a></div>
+	>
+<a href="http://localhost/autism/games.php" style="text-decoration: none; font-size: 25px; font-weight:bold; color: #E30D42;"> গেমস   </a></div>
+<style type="text/css">
+body{background-image:url("l.jpg");background-size:100%;height:100%;width:;background-repeat:no-repeat;}
+.mover {
+width:100px; 
+height:10em; 
+line-height:10em; 
+margin:10px; 
+padding:5px; 
+float:left; 
+background:#ffff99; 
+border:1px dotted #333333; 
+text-align:center;}
+div#mst{
+	background:#80ff00;
+	border:#999 1px solid;
+	align-left:20%;
+	text-size:50px;
+	text-align:center;
+	width:60%;
+	height:450px;
+	padding:24px;
+	margin:40px auto;
+}
+.button {
+    background-color: #009900;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	position:center;
+}
+</style>
+<script type="text/javascript">
+function dragWord(dragEvent){
+	dragEvent.dataTransfer.setData("text/html", dragEvent.target.textContent+"|"+dragEvent.target.parentNode.id);
+}
+function dropWord(dropEvent){
+	var dropData = dropEvent.dataTransfer.getData("text/html");
+	var dropItems = dropData.split("|"); 
+	var prevElem = document.getElementById(dropItems[1]); 
+	prevElem.getElementsByTagName("div")[0].textContent = dropEvent.target.textContent;
+	dropEvent.target.textContent = dropItems[0];
+	dropEvent.preventDefault();
+}
+</script>
+</head>
+<body>
+<div id="mst"><em><h1>শব্দগুলো সাজিয়ে বাক্য বানাও... </h1></em>
+<div id="box1" ondragover="event.preventDefault()" ondrop="dropWord(event)">
+
+<div class="mover" draggable="true" ondragstart="dragWord(event)">জাতীয় </div>
+</div>
+<div id="box2" ondragover="event.preventDefault()" ondrop="dropWord(event)">
+<div class="mover" draggable="true" ondragstart="dragWord(event)">বাংলাদেশের</div>
+</div>
+<div id="box3" ondragover="event.preventDefault()" ondrop="dropWord(event)">
+<div class="mover" draggable="true" ondragstart="dragWord(event)">নাম </div>
+</div>
+
+<div id="box4" ondragover="event.preventDefault()" ondrop="dropWord(event)">
+<div class="mover" draggable="true" ondragstart="dragWord(event)">ফুলের </div>
+</div>
+<div id="box5" ondragover="event.preventDefault()" ondrop="dropWord(event)">
+<div class="mover" draggable="true" ondragstart="dragWord(event)">হল</div>
+</div>
+<div id="box6" ondragover="event.preventDefault()" ondrop="dropWord(event)">
+<div class="mover" draggable="true" ondragstart="dragWord(event)">শাপলা  </div>
+
+</div>
+<div>
+
+</br></br><center><a href="autn2.html" class="button">পরবর্তী</a> </br></br><a href="autn2.html" class="button">পূর্ববর্তী </a></center></div>
+</div>
+</body>
+</html>
+
+

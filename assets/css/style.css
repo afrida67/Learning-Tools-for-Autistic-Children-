@@ -1,0 +1,151 @@
+/* This css file is to over write bootstarp css
+---------------------------------------------------------------------- */
+/*
+Theme Name: Heera
+Theme URI: http://jeweltheme.com/
+Author: JWTheme
+Author URI: http://jeweltheme.com/
+Description: Heera HTML5 Template by JWTheme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: html, themplate, heera, jwtheme, business
+*---------------------------------------------------------------------- */
+
+
+
+/*---------------------------------------------------------------------- /
+Table of Contents 
+------------------------------------------------------------------------ /
+
+* 1 - Google Font
+* 2 - General Styles
+*   2.1 - Headings 
+*   2.2 - Carosuel 
+*   2.3 - Title Related  
+*   2.4 - Isotope Items Filter
+* 3 - Typography Page Start
+*   3.1 - Dropcap
+*   3.2 - Blockquote
+*   3.3 - List Styles
+*   3.4 - Text Styles
+* 4 - Short Code Page Start 
+*   4.1 - Accordion
+*   4.2 - Tab
+
+------------------------------------------------------------------------ /
+Table of Contents End
+------------------------------------------------------------------------*/
+
+/* 1 - Google Font
+------------------------------------------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800);
+
+/* 1 - Google Font End 
+------------------------------------------------------------------------*/
+
+
+/* 2 - General styles
+---------------------------------------------------------------------- */
+
+/* Portfolio Section */
+
+
+.portfolio-top {
+	position: relative;
+}
+.portfolio-area {
+
+	padding-top: 320px;
+}
+
+.portfolio-title {
+	color: #FF0080;
+	font-size: 30px;
+	font-weight: 800;
+	position: relative;
+	text-transform: uppercase;
+}
+.portfolio-title:before,
+.portfolio-title:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	height: 1px;
+	background-color: #d7dee0;
+	width: 32%;
+}
+.portfolio-title:before {
+	left: 0px;
+}
+.portfolio-title:after {
+	right: 0px;
+}
+.portfolio-area .title-description {
+	color: #3498db;
+	font-size: 25px;
+	padding-top: 5px;
+}
+.portfolio-slider {
+	padding-top: 25px;
+}
+.portfolio-slider .item-title {
+	color: #9F0DC0;
+	display: inline-block;
+	font-size: 20px;
+	padding: 8px 0px;
+}
+.slide-nav {
+	background-color: #3498db;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	width: 25px;
+	height: 25px;
+	line-height: 23px;
+	text-align: center;
+	top: 6px;
+	position: absolute;
+}
+.slide-nav:hover {
+	background-color: #00000;
+	border-color: #3498db;
+	color: #3498db;
+}
+.slide-left {
+	left: 0px;
+}
+.slide-right {
+	right: 0px;
+}
+
+
+/* Scroll To Top */
+
+.scroll-to-top {
+	position: fixed;
+	right: 35px;
+	bottom: 35px;
+	font-size: 1.15em;
+	height: 40px;
+	width: 40px;
+	background-color: #3498db;
+	line-height: 38px;
+	color: #ffffff;
+	text-align: center;
+	opacity: .3;
+	cursor: pointer;
+
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.scroll-to-top:hover {
+	opacity: 1;
+}
+

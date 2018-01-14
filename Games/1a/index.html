@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<div style="float:left">
+	<a href="http://localhost/autism/home.html" style="text-decoration: none; padding-right: 10px; font-size: 25px; color: #640C84;">হোম  </a></div>
+	>
+<a href="http://localhost/autism/games.php" style="text-decoration: none; font-size: 25px; font-weight:bold; color: #E30D42;"> গেমস   </a></div>
+
+
+
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+		<meta name="author" content="Dino Saw Tze Syuen">
+		<meta name="description" content="Drag and drop kids challenge!">
+		<meta name="keywords" content="drag and drop, kids, challenge, fruits, vegetables, JavaScript, CSS3, HTML5">
+
+		<title>Drag and Drop Kids Challenge!</title>
+
+		<style type="text/css">
+		.button {
+    background-color: #009900;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	position:center;
+}
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				margin-top: 20px;
+				margin-left:90px;
+				background-image:url("n.jpg");
+				background-size:100%;height:100%;
+				width:100%;
+				background-repeat:no-repeat;
+			}
+
+			.row:after,
+			.hitbox:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			[class^="col-"] {
+				float: left;
+			}
+
+			.col-full {
+				width: 100%;
+			}
+
+			.col-half {
+				width: 50%;
+			}
+
+			.col-quarter {
+				width: 20%;
+				margin: 0.5%;
+				background-color: #aaaaaa;
+			}
+
+			.hitbox {
+				position: relative;
+			}
+
+			.hitbox:before {
+				display: block;
+				content: "";
+				padding-top: 100%;
+			}
+
+			.dropzone {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				
+				background-color:yellow;
+				background-size: 100% auto;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			.answer {
+				width: 25%;
+				height: 25%;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				z-index: 1;
+			}
+
+			.answer.show {
+				visibility: visible;
+			}
+
+			.answer.hide {
+				visibility: hidden;
+			}
+
+			.dropzone:not(.container) .icon {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+
+			.container {
+				background-image: url("img/putback-bg.png");
+				height:64%;
+			
+				margin-right:90px;
+			}
+
+			.icon {
+				width: 20%;
+				margin: 0.5%;
+			}
+
+			#dropzone-apple {
+				background-image: url("img/apple-bg.png");
+			}
+
+			#dropzone-bananas {
+				background-image: url("img/bananas-bg.png");
+			}
+
+			#dropzone-carrot {
+				background-image: url("img/carrot-bg.png");
+			}
+
+			#dropzone-cherries {
+				background-image: url("img/cherries-bg.png");
+			}
+
+			#dropzone-grapes {
+				background-image: url("img/grapes-bg.png");
+			}
+
+			#dropzone-lemon {
+				background-image: url("img/lemon-bg.png");
+			}
+
+			#dropzone-pear {
+				background-image: url("img/pear-bg.png");
+			}
+
+			#dropzone-strawberry {
+				background-image: url("img/strawberry-bg.png");
+			}
+
+			#dropzone-tomato {
+				background-image: url("img/tomato-bg.png");
+			}
+
+			#dropzone-watermelon {
+				background-image: url("img/watermelon-bg.png");
+			}
+
+			.instructions {
+				text-align: center;
+			}
+
+			@media(max-width: 799px) {
+				.col-quarter {
+					width: 49%;
+				}
+
+				.icon {
+					width: 49%;
+				}
+
+				.col-half.hitbox {
+					padding-top: 100%;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="row">
+			
+			<center>	<h1>ডান পাশের ছবিগুলোকে টেনে বামের নামগুলোর উপর বসাও...
+			</h1></br></center>
+				
+			
+			
+		</div>
+		<div class="col-full instructions">
+				<h1>তোমার নম্বরঃ <span id="score">0</span>/10.</h1></br>
+				</br><center><a href="index.html" class="button">আবার খেলুন </a></center></br></br>
+				
+			</div>
+		<div class="row">
+			<div id="dropzone-holder" class="col-half">
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-apple" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-bananas" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-carrot" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-cherries" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-grapes" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-lemon" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-pear" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-strawberry" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-tomato" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-watermelon" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">				
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-half hitbox" >
+				<div id="dropzone-container" class="dropzone container" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">
+					<img id="icon-apple" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/apple.png">
+					<img id="icon-bananas" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/bananas.png">
+					<img id="icon-carrot" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/carrot.png">
+					<img id="icon-cherries" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/cherries.png">
+					<img id="icon-grapes" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/grapes.png">
+					<img id="icon-lemon" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/lemon.png">
+					<img id="icon-pear" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/pear.png">
+					<img id="icon-strawberry" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/strawberry.png">
+					<img id="icon-tomato" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/tomato.png">
+					<img id="icon-watermelon" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="img/watermelon.png">
+
+				</div>
+				
+			</div>
+			
+		</div>
+
+		<script type="text/javascript">
+			var start = function(e) {
+				e.dataTransfer.effectAllowed = 'move';
+				e.dataTransfer.setData('iconId', e.target.id);
+				e.dataTransfer.setDragImage(e.target, 0, 0);
+				return true;
+			}
+
+			var enter = function(e) {
+				return true;
+			}
+
+			var over = function(e) {
+				var iconId = e.dataTransfer.getData('iconId');
+				var targetId = e.target.id;
+
+				if (targetId.indexOf('icon') > -1) {
+					return true;
+				}
+
+				return false;
+			}
+
+			var drop = function(e) {
+				var iconId = e.dataTransfer.getData('iconId');
+				var icon = document.getElementById(iconId);
+				e.target.appendChild(icon);
+				e.stopPropagation();
+				return false;
+			}
+
+			var end = function(e) {
+				e.dataTransfer.clearData('iconId');
+				return true;
+			}
+
+			var pollResults = function() {
+				var score = document.getElementById('score');
+				score.innerHTML = 0;
+
+				var hitboxes = document.getElementById('dropzone-holder').children;
+
+				for (var i = 0; i < hitboxes.length; ++i) {
+					var hitbox = hitboxes[i];
+					var dropzone = hitbox.lastElementChild;
+
+					if (dropzone.children.length > 0) {
+						dropzone.style.backgroundSize = '0';
+
+						var dropzoneId = dropzone.id;
+						var iconId = dropzone.firstElementChild.id;
+
+						var dropzoneName = dropzoneId.substring(dropzoneId.indexOf('-') + 1);
+						var iconName = iconId.substring(iconId.indexOf('-') + 1);
+
+						dropzone.previousElementSibling.setAttribute('class', 'answer show');
+
+						if (iconName == dropzoneName) {
+							dropzone.previousElementSibling.src = 'img/correct-green.png';
+							score.innerHTML = parseInt(score.innerHTML) + 1;
+						} else {
+							dropzone.previousElementSibling.src = 'img/wrong-red.png';
+						}
+					} else {
+						dropzone.previousElementSibling.setAttribute('class', 'answer hide');
+						dropzone.style.backgroundSize = '100% auto';
+					}
+				}
+
+				if (parseInt(score.innerHTML) == 10) {
+					alert('Congratulations! You won the game!\nClick OK to restart.');
+					location.reload();
+				}
+			}
+
+			setInterval(pollResults, 50);
+
+			var shuffleIcons = function() {
+				var dropzoneContainer = document.getElementById('dropzone-container');
+				var icons = dropzoneContainer.children;
+				var fragment = document.createDocumentFragment();
+				while (icons.length) {
+					fragment.appendChild(icons[Math.floor(Math.random() * icons.length)]);
+				}
+				dropzoneContainer.appendChild(fragment);
+			}
+
+			var shuffleDropzones = function() {
+				var dropzoneHolder = document.getElementById('dropzone-holder');
+				var dropzones = dropzoneHolder.children;
+				var fragment = document.createDocumentFragment();
+				while (dropzones.length) {
+					fragment.appendChild(dropzones[Math.floor(Math.random() * dropzones.length)]);
+				}
+				dropzoneHolder.appendChild(fragment);
+			}
+
+			window.onload = function() {
+				shuffleIcons();
+				shuffleDropzones();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+#score {
+	margin: 0 auto;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 22px;
+	-moz-text-shadow: 2px 2px 1px #248742;
+	-webkit-text-shadow: 2px 4px 1px #248742;
+	text-shadow: 2px 2px 1px #248742;
+}
+
+#coinTapGameContainer {
+	position: relative;
+	background-image: url("images/coin-tap-game-hud.png");
+	background-size: 100%;
+	width: 660px;
+	height: auto;
+	margin: 0 auto;
+	padding-top: 24px;
+	-webkit-user-select: none;  
+	-moz-user-select: none;    
+	-ms-user-select: none;      
+	user-select: none;
+}
+
+#coinTapGameContainer canvas {
+	margin: 0;
+	padding: 0;
+	width: 660px;
+}
+
+body {
+background-image: url("images/fg.jpg"); 
+
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+		background-size: cover;
+		background-position: top center !important;
+		background-repeat: no-repeat !important;
+		background-attachment: fixed;
+}
+
+ a:link {
+
+       	 color: blue;
+       	 text-decoration: none;
+		
+
+       }
+
+a {
+
+   
+	color: #930;
+	margin: 5px;
+	padding: 5px 10px;
+	display: inline-block;
+	list-style-type: none;
+	font: 24px sans-serif;
+	
+}
+h1 {
+   text-align: center;
+   margin: 1em auto;   
+
+}
+
+div.timer {
+    border:1px #666666 solid;
+    width:290px;
+    height:50px;
+    line-height:50px;
+    font-size:36px;
+    font-family:"Courier New", Courier, monospace;
+    text-align:center;
+     margin: 1em auto;  
+    position: relative;	 
+
+}
+

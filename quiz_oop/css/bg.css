@@ -1,0 +1,36 @@
+body {
+background-image: url(main-slider.jpg); /*You will specify your image path here.*/
+
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat !important;
+background-attachment: fixed;
+}
+.primary-btn {
+    position: relative;
+    display: table;
+    width: auto;
+    top: 0;
+}
+.primary-btn span{
+    background: #92278f none repeat scroll 0 0;
+    border: 1px solid #000;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 27px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+ .table {
+  border: 0.5px solid green;
+}
