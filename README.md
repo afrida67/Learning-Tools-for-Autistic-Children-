@@ -1,0 +1,1 @@
+To help the autistic children who are not consciously aware of their own ability to instantly process social cues, interpret people's intentions, or choose responses. So, we want to develop some learning tools for improving the social understanding and functioning of individuals with autism.
